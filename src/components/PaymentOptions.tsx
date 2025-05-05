@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { QrCode, CreditCard, Wallet, WhatsApp, IndianRupee } from "lucide-react";
+import { QrCode, CreditCard, Wallet, IndianRupee } from "lucide-react";
 import { toast } from "sonner";
 
 interface PaymentOptionsProps {
@@ -73,7 +73,7 @@ const PaymentOptions = ({ amount, campaignId, onPaymentComplete }: PaymentOption
           onClick={() => handlePaymentProcess('whatsapp')}
           disabled={isProcessing}
         >
-          <WhatsApp className="h-10 w-10 mb-2" />
+          <CreditCard className="h-10 w-10 mb-2" />
           <span>WhatsApp Pay</span>
         </Button>
         
