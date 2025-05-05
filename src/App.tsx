@@ -13,6 +13,8 @@ import Register from "./pages/Register";
 import About from "./pages/About";
 import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
+import Profile from "./pages/Profile";
+import MyCampaigns from "./pages/MyCampaigns";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +33,8 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/campaigns" element={<Campaigns />} />
             <Route path="/campaign/:id" element={<CampaignDetail />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/my-campaigns" element={<MyCampaigns />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

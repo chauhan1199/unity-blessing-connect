@@ -26,6 +26,8 @@ const NavBar = () => {
 
   const handleLogout = () => {
     logout();
+    // Force a reload to ensure all auth state is cleared
+    window.location.href = "/";
   };
 
   return (
@@ -65,6 +67,12 @@ const NavBar = () => {
                       <div className="py-2 font-medium">
                         Hello, {user?.name || user?.email}
                       </div>
+                      <Link to="/profile" onClick={toggleMobileMenu} className="py-2">
+                        Profile
+                      </Link>
+                      <Link to="/my-campaigns" onClick={toggleMobileMenu} className="py-2">
+                        My Campaigns
+                      </Link>
                       <Button onClick={() => {
                         handleLogout();
                         toggleMobileMenu();
@@ -108,7 +116,9 @@ const NavBar = () => {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-56">
-                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuLabel>
+                      {user?.name ? user.name : user?.email}
+                    </DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
                       <Link to="/profile" className="cursor-pointer w-full">Profile</Link>
