@@ -7,6 +7,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminCampaigns from "./pages/AdminCampaigns";
+import AdminCampaignNew from "./pages/AdminCampaignNew";
+import AdminCampaignEdit from "./pages/AdminCampaignEdit";
+import AdminUsers from "./pages/AdminUsers";
+import AdminAnalytics from "./pages/AdminAnalytics";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -28,6 +33,11 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/campaigns" element={<AdminCampaigns />} />
+            <Route path="/admin/campaigns/new" element={<AdminCampaignNew />} />
+            <Route path="/admin/campaigns/:id/edit" element={<AdminCampaignEdit />} />
+            <Route path="/admin/users" element={<AdminUsers />} />
+            <Route path="/admin/analytics" element={<AdminAnalytics />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/about" element={<About />} />

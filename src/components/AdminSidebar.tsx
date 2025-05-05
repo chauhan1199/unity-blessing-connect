@@ -10,9 +10,11 @@ import {
   Search
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/useAuth";
 
 const AdminSidebar = () => {
   const location = useLocation();
+  const { logout } = useAuth();
   
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -33,6 +35,11 @@ const AdminSidebar = () => {
       label: "Users",
       icon: <Users className="h-5 w-5" />,
       href: "/admin/users",
+    },
+    {
+      label: "Analytics",
+      icon: <BarChart2 className="h-5 w-5" />,
+      href: "/admin/analytics",
     },
     {
       label: "Reports",
@@ -99,10 +106,21 @@ const AdminSidebar = () => {
           <div className="h-10 w-10 rounded-full bg-spiritual-300 flex items-center justify-center">
             <span className="font-semibold text-spiritual-600">A</span>
           </div>
-          <div>
+          <div className="flex-1">
             <p className="font-medium text-sm">Admin User</p>
             <p className="text-spiritual-300 text-xs">admin@unityconnect.org</p>
           </div>
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="text-spiritual-300 hover:text-white hover:bg-spiritual-500/30"
+            onClick={() => {
+              logout();
+              window.location.href = '/login';
+            }}
+          >
+            Log out
+          </Button>
         </div>
       </div>
     </aside>
