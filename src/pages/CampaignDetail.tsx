@@ -10,6 +10,8 @@ import CampaignStats from "@/components/CampaignStats";
 import { Share } from "lucide-react";
 import useAuth from "@/hooks/useAuth";
 import { Campaign } from "@/components/CampaignCard";
+import PaymentOptions, { PaymentInfo } from "@/components/PaymentOptions";
+import PaymentReceipt from "@/components/PaymentReceipt";
 
 // Mock campaign data
 const mockCampaigns: Campaign[] = [
@@ -47,7 +49,10 @@ const CampaignDetail = () => {
   const [campaign, setCampaign] = useState<Campaign | null>(null);
   const [isJoining, setIsJoining] = useState(false);
   const [hasJoined, setHasJoined] = useState(false);
-  const { isLoggedIn } = useAuth();
+  const [showPayment, setShowPayment] = useState(false);
+  const [showReceipt, setShowReceipt] = useState(false);
+  const [paymentInfo, setPaymentInfo] = useState<PaymentInfo | null>(null);
+  const { isLoggedIn, user } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -78,23 +83,24 @@ const CampaignDetail = () => {
       return;
     }
 
-    setIsJoining(true);
+    setShowPayment(true);
+  };
+
+  const handlePaymentComplete = (paymentInfo: PaymentInfo) => {
+    setPaymentInfo(paymentInfo);
     
-    // Simulate payment and joining process
-    setTimeout(() => {
-      // Store joined campaign in localStorage
-      const joinedCampaigns = localStorage.getItem("joinedCampaigns");
-      let campaigns = joinedCampaigns ? JSON.parse(joinedCampaigns) : [];
-      
-      if (!campaigns.includes(id)) {
-        campaigns.push(id);
-        localStorage.setItem("joinedCampaigns", JSON.stringify(campaigns));
-      }
-      
-      setHasJoined(true);
-      setIsJoining(false);
-      toast.success("Successfully joined the campaign!");
-    }, 2000);
+    // Store joined campaign in localStorage
+    const joinedCampaigns = localStorage.getItem("joinedCampaigns");
+    let campaigns = joinedCampaigns ? JSON.parse(joinedCampaigns) : [];
+    
+    if (!campaigns.includes(id)) {
+      campaigns.push(id);
+      localStorage.setItem("joinedCampaigns", JSON.stringify(campaigns));
+    }
+    
+    setHasJoined(true);
+    setShowPayment(false);
+    setShowReceipt(true);
   };
 
   const handleShare = () => {
@@ -220,7 +226,13 @@ const CampaignDetail = () => {
                   </div>
                 </div>
 
-                {campaign.status === "active" ? (
+                {showPayment ? (
+                  <PaymentOptions 
+                    amount={5} 
+                    campaignId={campaign.id}
+                    onPaymentComplete={handlePaymentComplete} 
+                  />
+                ) : campaign.status === "active" ? (
                   hasJoined ? (
                     <div className="space-y-4">
                       <div className="p-4 bg-green-100 text-green-800 rounded-lg text-center">
@@ -234,6 +246,15 @@ const CampaignDetail = () => {
                         <Share className="mr-2 h-4 w-4" />
                         Share Campaign
                       </Button>
+                      {paymentInfo && (
+                        <Button 
+                          variant="outline" 
+                          className="w-full"
+                          onClick={() => setShowReceipt(true)}
+                        >
+                          View Receipt
+                        </Button>
+                      )}
                     </div>
                   ) : (
                     <div className="space-y-4">
@@ -293,6 +314,18 @@ const CampaignDetail = () => {
             </div>
           </div>
         </div>
+        
+        {/* Payment Receipt Modal */}
+        {showReceipt && paymentInfo && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <PaymentReceipt
+              paymentInfo={paymentInfo}
+              campaignTitle={campaign.title}
+              userName={user?.name}
+              onClose={() => setShowReceipt(false)}
+            />
+          </div>
+        )}
       </main>
       
       <Footer />
