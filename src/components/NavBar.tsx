@@ -3,14 +3,29 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
+import useAuth from "@/hooks/useAuth";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const NavBar = () => {
   const isMobile = useIsMobile();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isLoggedIn, user, logout } = useAuth();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
   };
 
   return (
@@ -44,14 +59,29 @@ const NavBar = () => {
                   <Link to="/about" onClick={toggleMobileMenu} className="py-2">
                     About
                   </Link>
-                  <div className="flex flex-col gap-2">
-                    <Button asChild variant="ghost">
-                      <Link to="/login" onClick={toggleMobileMenu}>Login</Link>
-                    </Button>
-                    <Button asChild>
-                      <Link to="/register" onClick={toggleMobileMenu}>Register</Link>
-                    </Button>
-                  </div>
+                  
+                  {isLoggedIn ? (
+                    <>
+                      <div className="py-2 font-medium">
+                        Hello, {user?.name || user?.email}
+                      </div>
+                      <Button onClick={() => {
+                        handleLogout();
+                        toggleMobileMenu();
+                      }} variant="ghost">
+                        Logout
+                      </Button>
+                    </>
+                  ) : (
+                    <div className="flex flex-col gap-2">
+                      <Button asChild variant="ghost">
+                        <Link to="/login" onClick={toggleMobileMenu}>Login</Link>
+                      </Button>
+                      <Button asChild>
+                        <Link to="/register" onClick={toggleMobileMenu}>Register</Link>
+                      </Button>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -69,13 +99,39 @@ const NavBar = () => {
                 About
               </Link>
             </div>
-            <div className="flex gap-4">
-              <Button asChild variant="ghost">
-                <Link to="/login">Login</Link>
-              </Button>
-              <Button asChild>
-                <Link to="/register">Register</Link>
-              </Button>
+            <div className="flex gap-4 items-center">
+              {isLoggedIn ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon" className="rounded-full">
+                      <User className="h-5 w-5" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-56">
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link to="/profile" className="cursor-pointer w-full">Profile</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/my-campaigns" className="cursor-pointer w-full">My Campaigns</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
+                      Logout
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <>
+                  <Button asChild variant="ghost">
+                    <Link to="/login">Login</Link>
+                  </Button>
+                  <Button asChild>
+                    <Link to="/register">Register</Link>
+                  </Button>
+                </>
+              )}
             </div>
           </>
         )}
