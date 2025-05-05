@@ -1,0 +1,8 @@
+
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#E5DEFF"/>
+  <path d="M400 200m-120 0a120 120 0 1 0 240 0a120 120 0 1 0 -240 0" fill="#9B87F5" fill-opacity="0.6"/>
+  <path d="M400 140C391.716 140 385 146.716 385 155C385 163.284 391.716 170 400 170C408.284 170 415 163.284 415 155C415 146.716 408.284 140 400 140ZM400 230C379.99 230 365 215.01 365 195V175C365 171.686 367.686 169 371 169C374.314 169 377 171.686 377 175V195C377 208.255 387.745 219 400 219C412.255 219 423 208.255 423 195V175C423 171.686 425.686 169 429 169C432.314 169 435 171.686 435 175V195C435 215.01 420.01 230 400 230Z" fill="white"/>
+  <text x="50%" y="280" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#1A1F2C">Unity Connect Campaign</text>
+  <text x="50%" y="310" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="16" fill="#7E69AB">Join our spiritual journey together</text>
+</svg>
