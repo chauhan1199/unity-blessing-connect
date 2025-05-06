@@ -41,14 +41,14 @@ const PaymentOptions = ({ amount, campaignId, onPaymentComplete }: PaymentOption
       };
       
       setIsProcessing(false);
-      onPaymentComplete(paymentInfo);
-      toast.success("Payment successful!");
       
       // Store payment receipt in localStorage
       const paymentReceipts = JSON.parse(localStorage.getItem("paymentReceipts") || "[]");
       paymentReceipts.push(paymentInfo);
       localStorage.setItem("paymentReceipts", JSON.stringify(paymentReceipts));
       
+      onPaymentComplete(paymentInfo);
+      toast.success("Payment successful!");
     }, 2000);
   };
 

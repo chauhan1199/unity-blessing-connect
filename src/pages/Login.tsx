@@ -18,6 +18,7 @@ import { toast } from "sonner";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Eye, EyeOff } from "lucide-react";
+import useAuth from "@/hooks/useAuth";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -32,6 +33,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { login } = useAuth();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -41,19 +43,20 @@ const Login = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    // In a real application, this would be an API call to authenticate the user
-    setTimeout(() => {
-      console.log(values);
-      localStorage.setItem("user", JSON.stringify({
-        email: values.email,
-        isLoggedIn: true
-      }));
+    console.log(values);
+    
+    try {
+      await login(values.email, values.password);
       toast.success("Login successful!");
       navigate("/");
+    } catch (error) {
+      toast.error("Login failed. Please check your credentials.");
+      console.error("Login error:", error);
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   }
 
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
@@ -73,6 +76,10 @@ const Login = () => {
                 <p className="text-muted-foreground mt-2">
                   Login to your Unity Connect account
                 </p>
+                <div className="mt-2 p-2 bg-blue-50 text-blue-700 text-sm rounded-md">
+                  <p><strong>Admin Account:</strong> admin@unityconnect.com / password123</p>
+                  <p><strong>User Account:</strong> user@example.com / password123</p>
+                </div>
               </div>
 
               <Form {...form}>

@@ -18,6 +18,16 @@ interface AuthContextType {
   logout: () => void;
 }
 
+// Pre-defined admin account
+const ADMIN_ACCOUNTS = [
+  { email: "admin@unityconnect.com", password: "password123", role: "admin" }
+];
+
+// Pre-defined user accounts for testing
+const USER_ACCOUNTS = [
+  { email: "user@example.com", password: "password123", role: "user" }
+];
+
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
@@ -44,23 +54,48 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   const login = async (email: string, password: string) => {
-    // In a real app, this would validate credentials against an API
-    return new Promise<void>((resolve) => {
+    // Check if it's an admin account
+    const adminAccount = ADMIN_ACCOUNTS.find(account => 
+      account.email.toLowerCase() === email.toLowerCase() && account.password === password
+    );
+    
+    // Check if it's a regular user account
+    const userAccount = USER_ACCOUNTS.find(account => 
+      account.email.toLowerCase() === email.toLowerCase() && account.password === password
+    );
+    
+    return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
-        // Check if this is the admin login (for demo purposes)
-        const isAdminUser = email.includes('admin');
-        
-        const userData: User = {
-          email,
-          isLoggedIn: true,
-          role: isAdminUser ? 'admin' : 'user'
-        };
-        
-        setUser(userData);
-        setIsLoggedIn(true);
-        setIsAdmin(isAdminUser);
-        localStorage.setItem("user", JSON.stringify(userData));
-        resolve();
+        if (adminAccount) {
+          const userData: User = {
+            email,
+            isLoggedIn: true,
+            role: 'admin'
+          };
+          
+          setUser(userData);
+          setIsLoggedIn(true);
+          setIsAdmin(true);
+          localStorage.setItem("user", JSON.stringify(userData));
+          resolve();
+        } else if (userAccount || (email.includes('@') && password.length >= 6)) {
+          // For demo purposes, also allow any email/password that meets basic criteria
+          const isAdminUser = email.includes('admin');
+          
+          const userData: User = {
+            email,
+            isLoggedIn: true,
+            role: isAdminUser ? 'admin' : 'user'
+          };
+          
+          setUser(userData);
+          setIsLoggedIn(true);
+          setIsAdmin(isAdminUser);
+          localStorage.setItem("user", JSON.stringify(userData));
+          resolve();
+        } else {
+          reject(new Error("Invalid credentials"));
+        }
       }, 1000);
     });
   };

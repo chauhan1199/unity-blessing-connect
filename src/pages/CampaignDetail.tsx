@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -71,10 +70,21 @@ const CampaignDetail = () => {
     }
   }, [id]);
 
+  // Add useEffect to check join status when login status changes
+  useEffect(() => {
+    if (isLoggedIn && id) {
+      const joinedCampaigns = localStorage.getItem("joinedCampaigns");
+      if (joinedCampaigns) {
+        const campaigns = JSON.parse(joinedCampaigns);
+        setHasJoined(campaigns.includes(id));
+      }
+    }
+  }, [isLoggedIn, id]);
+
   const handleJoinCampaign = () => {
     if (!isLoggedIn) {
       toast.error("Please login to join this campaign");
-      navigate("/login");
+      navigate("/login", { state: { redirectTo: `/campaign/${id}` } });
       return;
     }
 
@@ -101,6 +111,11 @@ const CampaignDetail = () => {
     setHasJoined(true);
     setShowPayment(false);
     setShowReceipt(true);
+    
+    // Update campaign participants count in the mock data (in a real app this would be an API call)
+    if (campaign) {
+      campaign.participants += 1;
+    }
   };
 
   const handleShare = () => {

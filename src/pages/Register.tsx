@@ -19,6 +19,7 @@ import { toast } from "sonner";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Eye, EyeOff } from "lucide-react";
+import useAuth from "@/hooks/useAuth";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -46,6 +47,7 @@ const formSchema = z.object({
 
 const Register = () => {
   const navigate = useNavigate();
+  const { register } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,21 +64,19 @@ const Register = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    // In a real application, this would be an API call to register the user
-    setTimeout(() => {
-      console.log(values);
-      localStorage.setItem("user", JSON.stringify({
-        name: values.name,
-        email: values.email,
-        phone: values.phone,
-        isLoggedIn: true
-      }));
+    
+    try {
+      await register(values.name, values.email, values.phone, values.password);
       toast.success("Account created successfully!");
       navigate("/");
+    } catch (error) {
+      toast.error("Registration failed. Please try again.");
+      console.error("Registration error:", error);
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   }
 
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
