@@ -1,4 +1,3 @@
-
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -60,7 +59,7 @@ const About = () => {
         {/* Our Vision Section */}
         <section className="py-16 bg-spiritual-100/50">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12 text-spiritual-600">Our Vision</h2>
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-6 text-spiritual-600">The Vision: Fostering Unity Through Shared Purpose</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="mb-4 flex justify-center">
@@ -75,7 +74,7 @@ const About = () => {
                 </div>
                 <h3 className="font-bold text-lg mb-3">Collective Participation</h3>
                 <p className="text-muted-foreground text-sm">
-                  Encouraging global involvement in spiritual cultural practices, bringing people together for a common purpose.
+                  Encouraging group involvement in spiritual causes worldwide.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
@@ -91,7 +90,7 @@ const About = () => {
                 </div>
                 <h3 className="font-bold text-lg mb-3">Inclusive Community</h3>
                 <p className="text-muted-foreground text-sm">
-                  Welcoming all faith-Systems, origins, and shared goals, regardless of background or locale.
+                  Welcoming all with fairness, respect, and shared goals.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
@@ -106,7 +105,7 @@ const About = () => {
                 </div>
                 <h3 className="font-bold text-lg mb-3">Empowering Impact</h3>
                 <p className="text-muted-foreground text-sm">
-                  Small contributions add to create larger social impact, demonstrating the power of collective action.
+                  Small contributions unite to create large-scale change.
                 </p>
               </div>
             </div>
@@ -116,77 +115,60 @@ const About = () => {
         {/* How It Works Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12 text-spiritual-600">How Unity Connect Works</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-8 text-spiritual-600">How it Works: Simple Steps to Join and Contribute</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="mb-4 flex justify-center">
                   <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="9" cy="7" r="4"></circle>
-                      <path d="M22 12h-4"></path>
-                      <path d="M18 8v8"></path>
-                    </svg>
+                    <span className="text-xl font-bold text-spiritual-600">1</span>
                   </div>
                 </div>
                 <h3 className="font-bold text-lg mb-3">Register & Login</h3>
                 <p className="text-muted-foreground text-sm">
-                  Create a secure account easily, safely register and join our growing community.
+                  Create a secure account easily within minutes.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="mb-4 flex justify-center">
                   <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
+                    <span className="text-xl font-bold text-spiritual-600">2</span>
                   </div>
                 </div>
                 <h3 className="font-bold text-lg mb-3">Join Campaigns</h3>
                 <p className="text-muted-foreground text-sm">
-                  Select your participation by paying ₹5 rupees, contributing to meaningful causes.
+                  Select and enter campaigns by paying ₹5 digitally.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="mb-4 flex justify-center">
                   <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
+                    <span className="text-xl font-bold text-spiritual-600">3</span>
                   </div>
                 </div>
                 <h3 className="font-bold text-lg mb-3">Receive Blessings</h3>
                 <p className="text-muted-foreground text-sm">
-                  Get digital blessings after participation, contributing to the spiritual community.
+                  Get digital blessings after participation.
                 </p>
               </div>
-            </div>
-
-            <div className="mt-10 text-center">
-              <div className="bg-white p-6 rounded-lg shadow-sm text-center max-w-sm mx-auto">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="mb-4 flex justify-center">
                   <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="8" r="7"></circle>
-                      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                    </svg>
+                    <span className="text-xl font-bold text-spiritual-600">4</span>
                   </div>
                 </div>
                 <h3 className="font-bold text-lg mb-3">Win Rewards</h3>
                 <p className="text-muted-foreground text-sm">
-                  Campaign-specific bonus distribution lucky to winners, enhancing your spiritual journey.
+                  Campaign-specific kits distributed fairly to winners.
                 </p>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Success Stories Section */}
+        
+        {/* Transparency and Fairness Section - NEW */}
         <section className="py-16 bg-spiritual-100/50">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12 text-spiritual-600">Success Stories: Campaigns That Made a Difference</h2>
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-8 text-spiritual-600">Transparency and Fairness: Ensuring Trust in Every Campaign</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="mb-4 flex justify-center">
@@ -196,9 +178,59 @@ const About = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="font-bold text-lg mb-3">Ganga Aarti</h3>
+                <h3 className="font-bold text-lg mb-3">Fair Voting</h3>
                 <p className="text-muted-foreground text-sm">
-                  100,000+ Participants joined from 50+ countries, contributing to environmental conservation.
+                  All users can vote on campaigns with clear rules.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Secure Payments</h3>
+                <p className="text-muted-foreground text-sm">
+                  ₹5 entry via trusted digital payment gateways.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="8" r="7"></circle>
+                      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Open Reward System</h3>
+                <p className="text-muted-foreground text-sm">
+                  Winners selected and rewards distributed transparently.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Success Stories Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-8 text-spiritual-600">Success Stories: Campaigns That Made a Difference</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Green Earth Drive</h3>
+                <p className="text-muted-foreground text-sm">
+                  Mobilized thousands to plant 10,000 trees nationwide.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
@@ -209,9 +241,9 @@ const About = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="font-bold text-lg mb-3">Diwali Lights</h3>
+                <h3 className="font-bold text-lg mb-3">Care & Share</h3>
                 <p className="text-muted-foreground text-sm">
-                  Provided 2,000+ LED lamps to needy communities for the dawn of community together.
+                  Provided food kits to 5,000 families in need.
                 </p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
@@ -226,61 +258,43 @@ const About = () => {
                 </div>
                 <h3 className="font-bold text-lg mb-3">Peace Within</h3>
                 <p className="text-muted-foreground text-sm">
-                  Sponsored meditation training, promoting mental and body wellness, thousand of participants.
+                  Sponsored meditation sessions promoting mental well-being.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Our Roadmap Section */}
-        <section className="py-16">
+        {/* Future Roadmap Section */}
+        <section className="py-16 bg-spiritual-100/50">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12 text-spiritual-600">Our Roadmap</h2>
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-8 text-spiritual-600">Future Roadmap: Expanding Unity Connect's Impact</h2>
             
-            <div className="max-w-3xl mx-auto relative">
-              {/* Vertical line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-spiritual-300"></div>
-              
-              {/* Q3 2024 */}
-              <div className="relative z-10 mb-12">
+            <div className="max-w-3xl mx-auto">
+              <div className="bg-white p-6 rounded-lg shadow-sm mb-4">
                 <div className="flex items-center">
-                  <div className="flex-1 text-right pr-8 md:pr-12">
-                    <h3 className="font-bold text-lg mb-2">Q3 2024</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Launch multi-language support and enhance accessibility, doubling user engagement.
-                    </p>
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-spiritual-500 border-4 border-white"></div>
-                  <div className="flex-1"></div>
-                </div>
-              </div>
-              
-              {/* Q4 2024 */}
-              <div className="relative z-10 mb-12">
-                <div className="flex items-center">
-                  <div className="flex-1"></div>
-                  <div className="w-8 h-8 rounded-full bg-spiritual-500 border-4 border-white"></div>
-                  <div className="flex-1 pl-8 md:pl-12">
-                    <h3 className="font-bold text-lg mb-2">Q4 2024</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Implement community-driven campaigns and interactive features for shared experiences.
-                    </p>
+                  <div className="font-bold text-spiritual-600 w-24">Q3 2024</div>
+                  <div className="ml-4">
+                    Launch multi-language support and wider user accessibility.
                   </div>
                 </div>
               </div>
               
-              {/* Q1 2025 */}
-              <div className="relative z-10">
+              <div className="bg-white p-6 rounded-lg shadow-sm mb-4">
                 <div className="flex items-center">
-                  <div className="flex-1 text-right pr-8 md:pr-12">
-                    <h3 className="font-bold text-lg mb-2">Q1 2025</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Global partnership with spiritual organizations globally, expanding our reach and impact.
-                    </p>
+                  <div className="font-bold text-spiritual-600 w-24">Q4 2024</div>
+                  <div className="ml-4">
+                    Introduce new campaign categories and interactive features.
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-spiritual-500 border-4 border-white"></div>
-                  <div className="flex-1"></div>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <div className="flex items-center">
+                  <div className="font-bold text-spiritual-600 w-24">Q1 2025</div>
+                  <div className="ml-4">
+                    Form partnerships with spiritual organizations globally.
+                  </div>
                 </div>
               </div>
             </div>
@@ -314,7 +328,7 @@ const About = () => {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
-                  <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=1287&auto=format&fit=crop" alt="Raj Patel" className="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1666492031773-4f4e44671857?q=80&w=1287&auto=format&fit=crop" alt="Raj Patel" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="font-bold text-lg mb-1">Raj Patel</h3>
                 <p className="text-spiritual-500 text-sm mb-3">Operations Lead</p>
@@ -336,7 +350,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Mission & Vision Section (from original) */}
+        {/* Mission & Vision Section */}
         <section className="py-16 bg-spiritual-600 text-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
