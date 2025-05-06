@@ -45,6 +45,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           setUser(parsedUser);
           setIsLoggedIn(true);
           setIsAdmin(parsedUser.role === 'admin');
+          
+          // Debug the stored user
+          console.log("Stored user:", parsedUser);
         }
       } catch (error) {
         console.error("Error parsing user from localStorage:", error);
@@ -77,6 +80,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           setIsLoggedIn(true);
           setIsAdmin(true);
           localStorage.setItem("user", JSON.stringify(userData));
+          
+          console.log("Admin login successful:", userData);
           resolve();
         } else if (userAccount || (email.includes('@') && password.length >= 6)) {
           // For demo purposes, also allow any email/password that meets basic criteria
@@ -92,6 +97,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           setIsLoggedIn(true);
           setIsAdmin(isAdminUser);
           localStorage.setItem("user", JSON.stringify(userData));
+          
+          console.log("User login successful:", userData);
           resolve();
         } else {
           reject(new Error("Invalid credentials"));

@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "@/hooks/useAuth";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider, useAuth } from "@/hooks/useAuth";
 import Index from "./pages/Index";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminCampaigns from "./pages/AdminCampaigns";
@@ -23,6 +23,48 @@ import MyCampaigns from "./pages/MyCampaigns";
 
 const queryClient = new QueryClient();
 
+// Protected route component for admin routes
+const AdminRoute = ({ children }: { children: React.ReactNode }) => {
+  const { isLoggedIn, isAdmin } = useAuth();
+  
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
+  
+  if (!isAdmin) {
+    return <Navigate to="/" />;
+  }
+  
+  return <>{children}</>;
+};
+
+// Main App with route configuration
+const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      
+      {/* Admin routes with protection */}
+      <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
+      <Route path="/admin/campaigns" element={<AdminRoute><AdminCampaigns /></AdminRoute>} />
+      <Route path="/admin/campaigns/new" element={<AdminRoute><AdminCampaignNew /></AdminRoute>} />
+      <Route path="/admin/campaigns/:id/edit" element={<AdminRoute><AdminCampaignEdit /></AdminRoute>} />
+      <Route path="/admin/users" element={<AdminRoute><AdminUsers /></AdminRoute>} />
+      <Route path="/admin/analytics" element={<AdminRoute><AdminAnalytics /></AdminRoute>} />
+      
+      {/* Public routes */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/campaigns" element={<Campaigns />} />
+      <Route path="/campaign/:id" element={<CampaignDetail />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/my-campaigns" element={<MyCampaigns />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
@@ -30,23 +72,7 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/admin/campaigns" element={<AdminCampaigns />} />
-            <Route path="/admin/campaigns/new" element={<AdminCampaignNew />} />
-            <Route path="/admin/campaigns/:id/edit" element={<AdminCampaignEdit />} />
-            <Route path="/admin/users" element={<AdminUsers />} />
-            <Route path="/admin/analytics" element={<AdminAnalytics />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/campaigns" element={<Campaigns />} />
-            <Route path="/campaign/:id" element={<CampaignDetail />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/my-campaigns" element={<MyCampaigns />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <AppRoutes />
         </TooltipProvider>
       </AuthProvider>
     </BrowserRouter>

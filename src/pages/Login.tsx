@@ -33,7 +33,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { login } = useAuth();
+  const { login, isAdmin } = useAuth();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -50,7 +50,13 @@ const Login = () => {
     try {
       await login(values.email, values.password);
       toast.success("Login successful!");
-      navigate("/");
+      
+      // Check if user is admin and redirect accordingly
+      if (values.email === "admin@unityconnect.com" || values.email.includes('admin')) {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
     } catch (error) {
       toast.error("Login failed. Please check your credentials.");
       console.error("Login error:", error);
