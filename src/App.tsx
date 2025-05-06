@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Campaigns from "./pages/Campaigns";
 import CampaignDetail from "./pages/CampaignDetail";
 import Profile from "./pages/Profile";
@@ -56,6 +57,7 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="/campaigns" element={<Campaigns />} />
       <Route path="/campaign/:id" element={<CampaignDetail />} />
       <Route path="/profile" element={<Profile />} />

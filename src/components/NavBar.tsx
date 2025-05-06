@@ -61,6 +61,9 @@ const NavBar = () => {
                   <Link to="/about" onClick={toggleMobileMenu} className="py-2">
                     About
                   </Link>
+                  <Link to="/contact" onClick={toggleMobileMenu} className="py-2">
+                    Contact
+                  </Link>
                   
                   {isLoggedIn ? (
                     <>
@@ -105,6 +108,9 @@ const NavBar = () => {
               </Link>
               <Link to="/about" className="font-medium hover:text-spiritual-400 transition-colors">
                 About
+              </Link>
+              <Link to="/contact" className="font-medium hover:text-spiritual-400 transition-colors">
+                Contact
               </Link>
             </div>
             <div className="flex gap-4 items-center">
