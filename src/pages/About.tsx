@@ -57,7 +57,286 @@ const About = () => {
           </div>
         </section>
 
-        {/* Mission & Vision Section */}
+        {/* Our Vision Section */}
+        <section className="py-16 bg-spiritual-100/50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12 text-spiritual-600">Our Vision</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Collective Participation</h3>
+                <p className="text-muted-foreground text-sm">
+                  Encouraging global involvement in spiritual cultural practices, bringing people together for a common purpose.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                      <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                      <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Inclusive Community</h3>
+                <p className="text-muted-foreground text-sm">
+                  Welcoming all faith-Systems, origins, and shared goals, regardless of background or locale.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                      <path d="M2 17l10 5 10-5"></path>
+                      <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Empowering Impact</h3>
+                <p className="text-muted-foreground text-sm">
+                  Small contributions add to create larger social impact, demonstrating the power of collective action.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12 text-spiritual-600">How Unity Connect Works</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 12h-4"></path>
+                      <path d="M18 8v8"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Register & Login</h3>
+                <p className="text-muted-foreground text-sm">
+                  Create a secure account easily, safely register and join our growing community.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Join Campaigns</h3>
+                <p className="text-muted-foreground text-sm">
+                  Select your participation by paying ₹5 rupees, contributing to meaningful causes.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Receive Blessings</h3>
+                <p className="text-muted-foreground text-sm">
+                  Get digital blessings after participation, contributing to the spiritual community.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-10 text-center">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center max-w-sm mx-auto">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="8" r="7"></circle>
+                      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Win Rewards</h3>
+                <p className="text-muted-foreground text-sm">
+                  Campaign-specific bonus distribution lucky to winners, enhancing your spiritual journey.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Success Stories Section */}
+        <section className="py-16 bg-spiritual-100/50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12 text-spiritual-600">Success Stories: Campaigns That Made a Difference</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Ganga Aarti</h3>
+                <p className="text-muted-foreground text-sm">
+                  100,000+ Participants joined from 50+ countries, contributing to environmental conservation.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Diwali Lights</h3>
+                <p className="text-muted-foreground text-sm">
+                  Provided 2,000+ LED lamps to needy communities for the dawn of community together.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-spiritual-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-spiritual-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                      <path d="M2 17l10 5 10-5"></path>
+                      <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-3">Peace Within</h3>
+                <p className="text-muted-foreground text-sm">
+                  Sponsored meditation training, promoting mental and body wellness, thousand of participants.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Roadmap Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12 text-spiritual-600">Our Roadmap</h2>
+            
+            <div className="max-w-3xl mx-auto relative">
+              {/* Vertical line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-spiritual-300"></div>
+              
+              {/* Q3 2024 */}
+              <div className="relative z-10 mb-12">
+                <div className="flex items-center">
+                  <div className="flex-1 text-right pr-8 md:pr-12">
+                    <h3 className="font-bold text-lg mb-2">Q3 2024</h3>
+                    <p className="text-muted-foreground text-sm">
+                      Launch multi-language support and enhance accessibility, doubling user engagement.
+                    </p>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-spiritual-500 border-4 border-white"></div>
+                  <div className="flex-1"></div>
+                </div>
+              </div>
+              
+              {/* Q4 2024 */}
+              <div className="relative z-10 mb-12">
+                <div className="flex items-center">
+                  <div className="flex-1"></div>
+                  <div className="w-8 h-8 rounded-full bg-spiritual-500 border-4 border-white"></div>
+                  <div className="flex-1 pl-8 md:pl-12">
+                    <h3 className="font-bold text-lg mb-2">Q4 2024</h3>
+                    <p className="text-muted-foreground text-sm">
+                      Implement community-driven campaigns and interactive features for shared experiences.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Q1 2025 */}
+              <div className="relative z-10">
+                <div className="flex items-center">
+                  <div className="flex-1 text-right pr-8 md:pr-12">
+                    <h3 className="font-bold text-lg mb-2">Q1 2025</h3>
+                    <p className="text-muted-foreground text-sm">
+                      Global partnership with spiritual organizations globally, expanding our reach and impact.
+                    </p>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-spiritual-500 border-4 border-white"></div>
+                  <div className="flex-1"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Meet Our Team Section */}
+        <section className="py-16 bg-spiritual-100/50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12 text-spiritual-600">Meet Our Team</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop" alt="Shantiniloy Chauhan" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="font-bold text-lg mb-1">Shantiniloy Chauhan</h3>
+                <p className="text-spiritual-500 text-sm mb-3">Founder & CEO</p>
+                <p className="text-muted-foreground text-xs">
+                  Visionary leader who connects spirituality and creating community-level positive impact.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+                  <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=1289&auto=format&fit=crop" alt="Priya Sharma" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="font-bold text-lg mb-1">Priya Sharma</h3>
+                <p className="text-spiritual-500 text-sm mb-3">Technology Head</p>
+                <p className="text-muted-foreground text-xs">
+                  Oversees all our technical elements that help with our mission and values.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+                  <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=1287&auto=format&fit=crop" alt="Raj Patel" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="font-bold text-lg mb-1">Raj Patel</h3>
+                <p className="text-spiritual-500 text-sm mb-3">Operations Lead</p>
+                <p className="text-muted-foreground text-xs">
+                  Manages our digital platform and ensures a seamless user experience.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+                  <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1471&auto=format&fit=crop" alt="Meera Joshi" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="font-bold text-lg mb-1">Meera Joshi</h3>
+                <p className="text-spiritual-500 text-sm mb-3">Community Manager</p>
+                <p className="text-muted-foreground text-xs">
+                  Builds and nurtures our thriving community of spiritual participants.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission & Vision Section (from original) */}
         <section className="py-16 bg-spiritual-600 text-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -78,82 +357,6 @@ const About = () => {
                 <p>
                   We aim to set world records for spiritual participation while supporting those in need through our transparent donation system.
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* How It Works Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-12">How Unity Connect Works</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center p-6">
-                <div className="w-16 h-16 rounded-full spiritual-gradient flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">1</span>
-                </div>
-                <h3 className="font-bold text-xl mb-3">Join a Campaign</h3>
-                <p className="text-muted-foreground">
-                  Browse our active campaigns and join with just ₹5. Each campaign supports specific spiritual and social causes.
-                </p>
-              </div>
-              <div className="text-center p-6">
-                <div className="w-16 h-16 rounded-full spiritual-gradient flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">2</span>
-                </div>
-                <h3 className="font-bold text-xl mb-3">Receive Blessings</h3>
-                <p className="text-muted-foreground">
-                  After participating, receive digital blessing cards and certificates. Some participants are randomly selected to win physical spiritual kits.
-                </p>
-              </div>
-              <div className="text-center p-6">
-                <div className="w-16 h-16 rounded-full spiritual-gradient flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">3</span>
-                </div>
-                <h3 className="font-bold text-xl mb-3">Create Impact</h3>
-                <p className="text-muted-foreground">
-                  Your participation contributes to world records and social causes. Track how your contribution makes a difference.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Social Impact Section */}
-        <section className="py-16 bg-spiritual-100/50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold font-poppins text-center mb-8">Our Social Impact</h2>
-              <p className="text-center text-lg text-muted-foreground mb-12">
-                5% of all donations are directed towards social causes including child welfare and old age homes.
-              </p>
-              <div className="space-y-8">
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="font-bold text-xl mb-2">Child Welfare Programs</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Supporting education, nutrition, and healthcare for underprivileged children across India.
-                  </p>
-                  <div className="w-full bg-gray-200 rounded-full h-2 mb-1">
-                    <div className="bg-spiritual-300 h-2 rounded-full" style={{ width: '50%' }}></div>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="font-medium">₹22,089 raised</span>
-                    <span className="text-spiritual-400">Target: ₹50,000</span>
-                  </div>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="font-bold text-xl mb-2">Old Age Home Support</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Providing comfort, care, and companionship to elderly residents in need across multiple facilities.
-                  </p>
-                  <div className="w-full bg-gray-200 rounded-full h-2 mb-1">
-                    <div className="bg-spiritual-400 h-2 rounded-full" style={{ width: '50%' }}></div>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="font-medium">₹22,089 raised</span>
-                    <span className="text-spiritual-400">Target: ₹50,000</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
